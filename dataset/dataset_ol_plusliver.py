@@ -160,7 +160,7 @@ def test_pancreas_dataset():
     label_file = '/data/gzf/tumor_transfer/Dataset/ncav_ol_labelsummary.xlsx'
     
     # Create an instance of the PancreasDataset
-    dataset = PancreasDataset(pancreas_phase1_dir, pancreas_phase2_dir, pancreas_phase3_dir, liver_phase1_dir, liver_phase2_dir, liver_phase3_dir, label_file, state='train')
+    dataset = PancreasDataset(pancreas_phase1_dir, pancreas_phase2_dir, pancreas_phase3_dir, liver_phase1_dir, liver_phase2_dir, liver_phase3_dir, label_file, transform=None)
     
     # Test the dataset
     for i in range(len(dataset)):
