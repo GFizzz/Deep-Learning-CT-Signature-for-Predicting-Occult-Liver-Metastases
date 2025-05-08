@@ -10,15 +10,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from tqdm import tqdm
 from dataset.dataset_ol_plusliver import *
-# from dataset.dataset_ol_3channel_aug_liver_only import *
-# from network.resnet3D_three_channel import *
-# from network.HEF import *
 from network.network_liver_metastases import *
-# from network.cross_attentionGPT import *
 import itertools
 from monai.transforms import Compose, RandGaussianNoise, RandBiasField, RandFlip
-# Define training and validation functions
-
 
 class FocalLossBinary(nn.Module):
     def __init__(self, alpha=0.25, gamma=2):
