@@ -1,20 +1,30 @@
 # Deep-Learning-CT-Signature-for-Predicting-Occult-Liver-Metastases
 
-## Important Notice
+## Introduction
 
-Thank you for your interest in this project! Currently, the code is being organized and prepared for release. It will be made publicly available once the associated paper is officially accepted. 
+This repository accompanies our research on using deep learning to develop a CT-based signature for predicting occult liver metastases. The method is designed to assist in identifying patients at high risk of metastasis, potentially enabling earlier interventions and improved treatment planning.
 
-### Release Plan
+## 🔧 Project Status
 
-- Current Status: Code is under preparation.
-- Expected Release: **After the paper is accepted.**
+Thank you for your interest in this project!  
+The project is still under active development, and we are progressively releasing the codebase.
 
-Please note that until the release, the project is still under development and may undergo significant changes. We recommend not using the current code for production purposes.
+- ✅ **Partially released**: Some components of the code are now available.
+- ⏳ **In preparation**: Full code will be released after the associated paper is officially accepted.
+- 📌 **Current release**: The **network architecture** can be found in: network/network_liver_metastases.py
 
-Feel free to check back later for updates, and thank you for your patience and understanding.
 
-For any inquiries or suggestions, please open an issue in this repository.
+Please note that the repository may undergo significant updates. We advise against using the current version in production or clinical applications until the official release.
+
+## 📅 Release Plan
+
+| Item              | Status                  |
+|-------------------|--------------------------|
+| Code Preparation  | In Progress              |
+| Full Release      | After paper acceptance   |
+
 
 ---
 
-Thank you for your support!
+Thank you for your support and patience!
+
