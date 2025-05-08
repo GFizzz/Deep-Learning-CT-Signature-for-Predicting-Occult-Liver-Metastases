@@ -384,38 +384,31 @@ class SegMamba(nn.Module):
         return x
 
     def forward(self, x_in, y_in):
-        # 获取MambaEncoder的输出
         outs = self.vit(x_in)
         
-        # Encoder部分
+        # Encoder
         enc1 = self.encoder1(x_in)
         enc2 = self.encoder2(outs[0])
         enc3 = self.encoder3(outs[1])
         enc4 = self.encoder4(outs[2])
         
-        # 通过 encoder5 进一步提取高层次特征
         enc_hidden = self.encoder5(outs[3])
         
-        # 对每个特征图进行全局池化
         pooled_enc1 = self.global_pool(enc1).view(enc1.size(0), -1)
         pooled_enc2 = self.global_pool(enc2).view(enc2.size(0), -1)
         pooled_enc3 = self.global_pool(enc3).view(enc3.size(0), -1)
         pooled_enc4 = self.global_pool(enc4).view(enc4.size(0), -1)
         pooled_hidden = self.global_pool(enc_hidden).view(enc_hidden.size(0), -1)
 
-        # 获取MambaEncoder的输出
         outs1 = self.vit(y_in)
         
-        # Encoder部分
         enc11 = self.encoder1(y_in)
         enc12 = self.encoder2(outs1[0])
         enc13 = self.encoder3(outs1[1])
         enc14 = self.encoder4(outs1[2])
         
-        # 通过 encoder5 进一步提取高层次特征
         enc_hidden1 = self.encoder5(outs1[3])
         
-        # 对每个特征图进行全局池化
         pooled_enc11 = self.global_pool(enc11).view(enc1.size(0), -1)
         pooled_enc12 = self.global_pool(enc12).view(enc2.size(0), -1)
         pooled_enc13 = self.global_pool(enc13).view(enc3.size(0), -1)
