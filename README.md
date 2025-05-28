@@ -54,6 +54,46 @@ python setup.py install
 pip install monai
 ```
 
+## 3. Demo
+
+### Data collection
+
+Due to privacy issues, you need to collect multi-phase CECT images (arterial phase, venous phase, delay phase) by yourself.
+
+We will put the preprocessed images demo in the data directory "data/"
+
+### Preprocessing
+可以参考nnunet的预处理流程（https://github.com/MIC-DKFZ/nnUNet），对三期CECT图像分别经过预处理得到3d-full-npy文件，并将三期图像的mask乘上其肿瘤mask得到肿瘤区域的npy
+After pre-processing, the data structure will be in this format:
+
+![](images/data_structure.jpg)
+### Training 
+
+When the pre-processing process is done, we can train our model.
+
+We mainly use the pre-processde data from last step: **data_dir = "./data/fullres/train"**
+
+
+```bash 
+python 3_train.py
+```
+
+The training logs and checkpoints are saved in:
+**logdir = f"./logs/segmamba"**
+
+
+
+
+### Inference 
+
+When we have trained our models, we can inference all the data in testing set.
+
+```bash 
+python 4_predict.py
+```
+
+When this process is done, the prediction cases will be put in this path:
+**save_path = "./prediction_results/segmamba"**
 
 
 ---
