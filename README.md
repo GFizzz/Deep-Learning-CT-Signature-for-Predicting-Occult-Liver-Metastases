@@ -23,12 +23,37 @@ Install all dependencies with:
 ```bash
 pip install -r requirements.txt
 ```
-## 📅 Release Plan
+## 2. Installation Guide📅
 
-| Item              | Status                  |
-|-------------------|--------------------------|
-| Code Preparation  | In Progress              |
-| Full Release      | After paper acceptance   |
+### Environment install
+Clone this repository and navigate to the root directory of the project.
+
+```bash
+git clone https://github.com/GFizzz/Deep-Learning-CT-Signature-for-Predicting-Occult-Liver-Metastases.git
+
+```
+#### Install causal-conv1d
+
+```bash
+cd causal-conv1d
+
+python setup.py install
+```
+
+#### Install mamba
+
+```bash
+cd mamba
+
+python setup.py install
+```
+
+#### Install monai 
+
+```bash
+pip install monai
+```
+
 
 
 ---
