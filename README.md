@@ -6,17 +6,22 @@ This repository accompanies our research on using deep learning to develop a CT-
 
 ![Model Overview](images/our_framework.jpg)
 
-## 🔧 Project Status
+## 1. System Requirements🔧
 
-Thank you for your interest in this project!  
-The project is still under active development, and we are progressively releasing the codebase.
+- OS: Linux / macOS / Windows 10+
+- Python: >= 3.8
+- Recommended: CUDA-compatible GPU (CUDA >= 11.0)
+- Dependencies:
+  - numpy >= 1.21.0  
+  - torch >= 1.10.0  
+  - torchvision >= 0.11.0  
+  - scikit-learn >= 1.0.0  
+  - matplotlib >= 3.4.0  
+  - (Other packages specified in `requirements.txt`)
 
-- ✅ **Partially released**: Some components of the code are now available.
-- ⏳ **In preparation**: Full code will be released after the associated paper is officially accepted.
-- 📌 **Current release**: The **network architecture** can be found in: network/network_liver_metastases.py
-
-
-Please note that the repository may undergo significant updates. We advise against using the current version in production or clinical applications until the official release.
+Install all dependencies with:
+```bash
+pip install -r requirements.txt
 
 ## 📅 Release Plan
 
