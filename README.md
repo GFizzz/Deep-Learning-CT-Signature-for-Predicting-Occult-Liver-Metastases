@@ -22,7 +22,7 @@ This repository accompanies our research on using deep learning to develop a CT-
 Install all dependencies with:
 ```bash
 pip install -r requirements.txt
-
+```
 ## 📅 Release Plan
 
 | Item              | Status                  |
