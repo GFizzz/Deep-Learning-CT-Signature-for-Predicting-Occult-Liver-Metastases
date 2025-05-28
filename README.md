@@ -1,6 +1,6 @@
 # Deep-Learning-CT-Signature-for-Predicting-Occult-Liver-Metastases
 
-## Introduction
+## 0. Introduction
 
 This repository accompanies our research on using deep learning to develop a CT-based signature for predicting occult liver metastases. The method is designed to assist in identifying patients at high risk of metastasis, potentially enabling earlier interventions and improved treatment planning.
 
