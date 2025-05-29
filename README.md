@@ -49,7 +49,7 @@ pip install monai
 
 ### Data collection
 
-Due to privacy issues, you need to collect multi-phase CECT images (arterial phase, venous phase, delay phase) by yourself.
+Due to privacy issues, you need to collect multi-phase CECT images (non-contrast phase, arterial phase, venous phase) by yourself.
 
 We will put the preprocessed images demo in the data directory "data/"
 
@@ -75,7 +75,7 @@ data/
 
 ├── PancreasTumor/
 
-│ ├── arteria/
+│ ├── noncontrast/
 
 │ │ ├── patient01.npy
 
@@ -91,7 +91,7 @@ data/
 
 │ │ ├── ...
 
-│ ├── delayed/
+│ ├── arteria/
 
 │ │ ├── patient01.npy
 
@@ -109,17 +109,17 @@ When the pre-processing and data preparing process is done, we can train our mod
 
 We mainly use the pre-processed data from last step: 
 
-- **phase1_dir = "data/PancreasTumor/arteria/"**
+- **phase1_dir = "data/PancreasTumor/noncontrast/"**
 
-- **phase2_dir = "data/PancreasTumor/venous/"**
+- **phase2_dir = "data/PancreasTumor/arteria/"**
 
-- **phase3_dir = "data/PancreasTumor/delayed/"**
+- **phase3_dir = "data/PancreasTumor/venous/"**
 
-- **liver_phase1_dir = "data/Liver/arteria/"**
+- **liver_phase1_dir = "data/Liver/noncontrast/"**
 
-- **liver_phase2_dir = "data/Liver/venous/"**
+- **liver_phase2_dir = "data/Liver/arteria/"**
 
-- **liver_phase3_dir = "data/Liver/delayed/"**
+- **liver_phase3_dir = "data/Liver/venous/"**
 
 - **label_file = "data/label.xlsx"**
 
