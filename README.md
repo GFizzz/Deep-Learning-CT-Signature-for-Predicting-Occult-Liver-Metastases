@@ -65,7 +65,7 @@ Patient labels are stored in an Excel file located in the `data/` directory.
 
 ### Preprocessing Instructions
 
-You may refer to the preprocessing pipeline of **nnU-Net** (https://github.com/MIC-DKFZ/nnUNet).  
+Refering to the preprocessing pipeline of **nnU-Net** (https://github.com/MIC-DKFZ/nnUNet).  
 Each phase of the contrast-enhanced CT (CECT) images is individually preprocessed to generate 3D full-resolution `.npy` files (`3d_fullres`).
 
 After preprocessing, for each phase, the corresponding CT image is element-wise multiplied by its tumor mask and liver mask to extract the tumor region and liver region. This results in one `.npy` file per phase representing the tumor area and liver area only.
@@ -140,8 +140,7 @@ When we have trained our models, we can inference all the data in testing set.
 python inference.py
 ```
 
-When this process is done, the prediction cases will be put in this path:
-**save_path = "./prediction_results/segmamba"**
+When this process is done, the prediction results will be put in **"test_results/"** as an `.xlsx` files.
 
 
 ---
