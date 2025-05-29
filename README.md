@@ -127,8 +127,7 @@ We mainly use the pre-processde data from last step:
 python train.py
 ```
 
-The training logs and checkpoints are saved in:
-**logdir = f"./logs/segmamba"**
+The training results and models are saved in: **logs/model/"**
 
 
 
