@@ -9,11 +9,9 @@ from sklearn.metrics import accuracy_score, confusion_matrix
 import matplotlib.pyplot as plt
 import seaborn as sns
 from tqdm import tqdm
-# from dataset.dataset_ol_3channel_aug import *
 from dataset.dataset_ol_3channel_nolabel import *
-from network.resnet3D_three_channel import *
+from network.liver_metastases import *
 # from network.HEF import *
-from model_segmamba.gzf_mamba_gzf import *
 # from network.cross_attentionGPT import *
 import itertools
 # Define training and validation functions
@@ -42,7 +40,7 @@ def plot_confusion_matrix(cm, classes, title='Confusion Matrix', cmap=plt.cm.Blu
 
 
 def test(model, device, test_loader, criterion, output_excel_path):
-    model.eval()  # 将模型设为评估模式
+    model.eval()
     running_loss = 0.0
     correct = 0
     total = 0
@@ -51,7 +49,7 @@ def test(model, device, test_loader, criterion, output_excel_path):
     all_probabilities = []
     all_names = []
     
-    with torch.no_grad():  # 不需要计算梯度
+    with torch.no_grad(): 
         for pancreas_combined_tensor, liver_combined_tensor, patient_name in tqdm(test_loader):
             pancreas_combined_tensor, liver_combined_tensor = pancreas_combined_tensor.to(device), liver_combined_tensor.to(device)
             outputs = model(pancreas_combined_tensor, liver_combined_tensor)
