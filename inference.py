@@ -121,7 +121,7 @@ def main_test():
     print(f"Number of testing batches: {len(test_loader)}")
     
     # Initialize and load model
-    model = SegMamba(in_chans=3, depths=[2, 2, 2, 2], feat_size=[48, 96, 192, 384]).to(device)
+    model = POLMMamba(in_chans=3, depths=[2, 2, 2, 2], feat_size=[48, 96, 192, 384]).to(device)
     # model.load_state_dict(torch.load('METALiv_best_model.pth'))
     # model.load_state_dict('result_tumor_transfer/best_model_20250210.pth')
     state_dict = torch.load('result_tumor_transfer/best_model_20250328_pancreasOnly.pth')
