@@ -66,11 +66,11 @@ We will put the preprocessed images demo in the data directory "data/"
 可以参考nnunet的预处理流程（https://github.com/MIC-DKFZ/nnUNet），对三期CECT图像分别经过预处理得到3d-fullres的npy文件，并将三期图像的mask乘上其肿瘤mask得到肿瘤区域的npy文件
 After pre-processing, organize the data structure in this format:
 
-**data/arteria/demo1.npy**
+- **data/arteria/demo1.npy**
 
-**data/venous/demo1.npy**
+- **data/venous/demo1.npy**
 
-**data/delayed/demo1.npy**
+- **data/delayed/demo1.npy**
 
 ### Training 
 
