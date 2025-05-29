@@ -99,8 +99,6 @@ data/
 
 │ ├── patient02.npy
 
-│ ├── patient03.npy
-
 │ ├── ...
 
 
