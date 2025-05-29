@@ -85,7 +85,7 @@ We mainly use the pre-processde data from last step:
 - **phase3_dir = "data/venous/"**
 
 ```bash 
-python 3_train.py
+python train.py
 ```
 
 The training logs and checkpoints are saved in:
@@ -99,7 +99,7 @@ The training logs and checkpoints are saved in:
 When we have trained our models, we can inference all the data in testing set.
 
 ```bash 
-python 4_predict.py
+python inference.py
 ```
 
 When this process is done, the prediction cases will be put in this path:
