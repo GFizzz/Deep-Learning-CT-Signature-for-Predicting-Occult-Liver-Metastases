@@ -60,21 +60,37 @@ Each phase of the contrast-enhanced CT (CECT) images is individually preprocesse
 
 After preprocessing, for each phase, the corresponding CT image is element-wise multiplied by its tumor mask to extract the tumor region. This results in one `.npy` file per phase representing the tumor area only.
 Then, organize the files as follows:
+
 data/
+
 ├── arteria/
+
 │ ├── patient01.npy
+
 │ ├── patient02.npy
+
 │ ├── patient03.npy
+
 │ ├── ...
+
 ├── venous/
+
 │ ├── patient01.npy
+
 │ ├── patient02.npy
+
 │ ├── patient03.npy
+
 │ ├── ...
+
 ├── delayed/
+
 │ ├── patient01.npy
+
 │ ├── patient02.npy
+
 │ ├── patient03.npy
+
 │ ├── ...
 
 ### Training 
