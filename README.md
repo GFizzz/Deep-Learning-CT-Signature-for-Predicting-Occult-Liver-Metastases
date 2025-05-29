@@ -78,11 +78,11 @@ When the pre-processing and data preparing process is done, we can train our mod
 
 We mainly use the pre-processde data from last step: 
 
-**phase1_dir = "data/arteria/"**
+- **phase1_dir = "data/arteria/"**
 
-**phase2_dir = "data/venous/"**
+- **phase2_dir = "data/venous/"**
 
-**phase3_dir = "data/venous/"**
+- **phase3_dir = "data/venous/"**
 
 ```bash 
 python 3_train.py
