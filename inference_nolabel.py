@@ -11,8 +11,6 @@ import seaborn as sns
 from tqdm import tqdm
 from dataset.dataset_ol_3channel_nolabel import *
 from network.liver_metastases import *
-# from network.HEF import *
-# from network.cross_attentionGPT import *
 import itertools
 # Define training and validation functions
 
@@ -119,7 +117,7 @@ def main_test():
     
     # Initialize and load model
     model = SegMamba(in_chans=3, depths=[2, 2, 2, 2], feat_size=[48, 96, 192, 384]).to(device="cuda")
-    model.load_state_dict(torch.load('all_best_model.pth'))
+    model.load_state_dict(torch.load('best_model.pth'))
     # model.load_state_dict(torch.load('result_tumor_transfer/best_model_20250313.pth'))
     model.to(device)
     
@@ -128,7 +126,7 @@ def main_test():
     
     # Test the model
     # test_loss, test_accuracy, auc, precision, recall, f1, cm = test(model, device, test_loader, criterion, 'test_results.xlsx')
-    test(model, device, test_loader, criterion, 'result_demo/20250313_test_results_nat.xlsx')
+    test(model, device, test_loader, criterion, 'result_demo/test_results_nat.xlsx')
     # Print test results
     # print(f"Test Loss: {test_loss:.4f}, Test Accuracy: {test_accuracy:.2f}%")
     # print(f"AUC: {auc:.4f}, Precision: {precision:.4f}, Recall: {recall:.4f}, F1: {f1:.4f}")
