@@ -148,9 +148,9 @@ When this process is done, the prediction results will be put in **"test_results
 python inference_nolabel.py
 ```
 
-## License
+## 4. License
 
-This project is licensed under the MIT License. You are free to use, modify, and distribute the code for research and educational purposes.
+This project is covered under the **Apache 2.0 License**.
 
 
 ## Acknowledgement
