@@ -245,7 +245,7 @@ class MambaEncoder(nn.Module):
         x = self.forward_features(x)
         return x
 
-class SegMamba(nn.Module):
+class POLMMamba(nn.Module):
     def __init__(
         self,
         in_chans=1,
