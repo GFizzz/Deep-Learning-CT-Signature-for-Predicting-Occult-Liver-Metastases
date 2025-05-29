@@ -82,8 +82,8 @@ def validate(model, device, val_loader, criterion, best_accuracy, output_excel_p
               
             all_labels.extend(label_tensor.cpu().numpy())
             all_predictions.extend(predicted.cpu().numpy())
-            all_probabilities.extend(outputs.softmax(dim=1)[:, 1].cpu().numpy())  # 获取类别1的概率
-            all_names.extend(patient_name)  # 保存病人名
+            all_probabilities.extend(outputs.softmax(dim=1)[:, 1].cpu().numpy()) 
+            all_names.extend(patient_name) 
 
     val_loss = running_loss / len(val_loader)
     val_accuracy = 100. * correct / total
@@ -193,11 +193,11 @@ def main():
 
     # class_weights = torch.tensor([1.0, 400.0/195.0], dtype=torch.float32).to(device)
 
-    # class_weights = torch.tensor([1.0, 400.0/195.0], dtype=torch.float32)  # 根据类别分布调整权重
+    # class_weights = torch.tensor([1.0, 400.0/195.0], dtype=torch.float32) 
     # criterion = torch.nn.CrossEntropyLoss()
     criterion = torch.nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=learning_rate, weight_decay=1e-5)
-    # 创建 CosineAnnealingLR 调度器
+    # CosineAnnealingLR
     scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=100, eta_min=0.00001)
     # criterion = FocalLossBinary(alpha=0.3, gamma=1.5)
     # Define loss function and optimizer
