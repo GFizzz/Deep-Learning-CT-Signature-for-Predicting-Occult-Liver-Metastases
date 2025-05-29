@@ -70,7 +70,7 @@ Each phase of the contrast-enhanced CT (CECT) images is individually preprocesse
 
 After preprocessing, for each phase, the corresponding CT image is element-wise multiplied by its tumor mask and liver mask to extract the tumor region and liver region. This results in one `.npy` file per phase representing the tumor area and liver area only.
 Then, organize the files as follows:
-
+```text
 data/
 
 ├── PancreasTumor/
@@ -102,7 +102,7 @@ data/
 ├── Liver/
 
 │ ├── ...
-
+```
 ### Training 
 
 When the pre-processing and data preparing process is done, we can train our model.
