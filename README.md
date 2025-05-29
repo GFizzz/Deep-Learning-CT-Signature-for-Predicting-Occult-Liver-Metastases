@@ -127,7 +127,7 @@ We mainly use the pre-processde data from last step:
 python train.py
 ```
 
-The training results and models are saved in: **logs/model/"**
+The training results and models are saved in: **"logs/model/"**
 
 
 
