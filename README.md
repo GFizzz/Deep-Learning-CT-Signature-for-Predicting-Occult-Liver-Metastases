@@ -73,34 +73,35 @@ Then, organize the files as follows:
 
 data/
 
-├── arteria/
+├── PancreasTumor/
 
-│ ├── patient01.npy
+│ ├── arteria/
 
-│ ├── patient02.npy
+│ │ ├── patient01.npy
 
-│ ├── patient03.npy
+│ │ ├── patient02.npy
+
+│ │ ├── ...
+
+│ ├── venous/
+
+│ │ ├── patient01.npy
+
+│ │ ├── patient02.npy
+
+│ │ ├── ...
+
+│ ├── delayed/
+
+│ │ ├── patient01.npy
+
+│ │ ├── patient02.npy
+
+│ │ ├── ...
+
+├── Liver/
 
 │ ├── ...
-
-├── venous/
-
-│ ├── patient01.npy
-
-│ ├── patient02.npy
-
-│ ├── patient03.npy
-
-│ ├── ...
-
-├── delayed/
-
-│ ├── patient01.npy
-
-│ ├── patient02.npy
-
-│ ├── ...
-
 
 ### Training 
 
