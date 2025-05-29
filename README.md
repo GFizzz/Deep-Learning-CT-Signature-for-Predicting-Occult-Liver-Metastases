@@ -68,7 +68,7 @@ Patient labels are stored in an Excel file located in the `data/` directory.
 You may refer to the preprocessing pipeline of **nnU-Net** (https://github.com/MIC-DKFZ/nnUNet).  
 Each phase of the contrast-enhanced CT (CECT) images is individually preprocessed to generate 3D full-resolution `.npy` files (`3d_fullres`).
 
-After preprocessing, for each phase, the corresponding CT image is element-wise multiplied by its tumor mask to extract the tumor region. This results in one `.npy` file per phase representing the tumor area only.
+After preprocessing, for each phase, the corresponding CT image is element-wise multiplied by its tumor mask and liver mask to extract the tumor region and liver region. This results in one `.npy` file per phase representing the tumor area and liver area only.
 Then, organize the files as follows:
 
 data/
@@ -109,11 +109,17 @@ When the pre-processing and data preparing process is done, we can train our mod
 
 We mainly use the pre-processde data from last step: 
 
-- **phase1_dir = "data/arteria/"**
+- **phase1_dir = "data/PancreasTumor/arteria/"**
 
-- **phase2_dir = "data/venous/"**
+- **phase2_dir = "data/PancreasTumor/venous/"**
 
-- **phase3_dir = "data/delayed/"**
+- **phase3_dir = "data/PancreasTumor/delayed/"**
+
+- **liver_phase1_dir = "data/Liver/arteria/"**
+
+- **liver_phase2_dir = "data/Liver/venous/"**
+
+- **liver_phase3_dir = "data/Liver/delayed/"**
 
 - **label_file = "data/label.xlsx"**
 
