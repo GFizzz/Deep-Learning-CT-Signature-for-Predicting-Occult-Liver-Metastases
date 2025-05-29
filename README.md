@@ -12,7 +12,7 @@ This repository accompanies our research on using deep learning to develop a CT-
 - Python: >= 3.8
 - Framework: Pytorch
 - Recommended: CUDA-compatible GPU (CUDA >= 11.0)
-- Dependencies: see sect.2
+- Dependencies: see **Sect.2**
 
 ## 2. Installation Guide📅
 
