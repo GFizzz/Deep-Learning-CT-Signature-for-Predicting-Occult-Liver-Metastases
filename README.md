@@ -8,21 +8,12 @@ This repository accompanies our research on using deep learning to develop a CT-
 
 ## 1. System Requirements🔧
 
-- OS: Linux / macOS / Windows 10+
+- OS: Linux
 - Python: >= 3.8
+- Framework: Pytorch
 - Recommended: CUDA-compatible GPU (CUDA >= 11.0)
-- Dependencies:
-  - numpy >= 1.21.0  
-  - torch >= 1.10.0  
-  - torchvision >= 0.11.0  
-  - scikit-learn >= 1.0.0  
-  - matplotlib >= 3.4.0  
-  - (Other packages specified in `requirements.txt`)
+- Dependencies: see sect.2
 
-Install all dependencies with:
-```bash
-pip install -r requirements.txt
-```
 ## 2. Installation Guide📅
 
 ### Environment install
