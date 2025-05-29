@@ -109,7 +109,7 @@ def main_test():
     label_file = '/data/gzf/tumor_transfer/Dataset/nat_true.xlsx'
     
     # Create an instance of the PancreasDataset
-    test_dataset = PancreasDataset(phase1_dir, phase2_dir, phase3_dir, liver_phase1_dir, liver_phase2_dir, liver_phase3_dir, label_file, transform=None)
+    test_dataset = PancreasDataset(phase1_dir, phase2_dir, phase3_dir, liver_phase1_dir, liver_phase2_dir, liver_phase3_dir, label_file)
     
     # Create data loader
     test_loader = DataLoader(test_dataset, batch_size=1, shuffle=False)
