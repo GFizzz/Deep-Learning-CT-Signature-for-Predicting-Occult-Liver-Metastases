@@ -9,12 +9,8 @@ from sklearn.metrics import accuracy_score, confusion_matrix
 import matplotlib.pyplot as plt
 import seaborn as sns
 from tqdm import tqdm
-from dataset.dataset_ol_3channel_aug import *
-# from dataset.dataset_ol_3channel import *
-# from network.resnet3D_three_channel import *
-# from network.HEF import *
-from model_segmamba.gzf_mamba_gzf import *
-# from network.cross_attentionGPT import *
+from dataset.dataset_ol_plusliver import *
+from network.network_liver_metastases import *
 import itertools
 # Define training and validation functions
 
