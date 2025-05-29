@@ -74,9 +74,7 @@ Then, organize the files as follows:
 data/
 
 ├── arteria/
-
 │ ├── patient01.npy
-
 │ ├── patient02.npy
 
 │ ├── patient03.npy
