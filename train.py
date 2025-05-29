@@ -10,9 +10,15 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from tqdm import tqdm
 from dataset.dataset_ol_plusliver import *
+# from dataset.dataset_ol_3channel_aug_liver_only import *
+# from network.resnet3D_three_channel import *
+# from network.HEF import *
 from network.network_liver_metastases import *
+# from network.cross_attentionGPT import *
 import itertools
 from monai.transforms import Compose, RandGaussianNoise, RandBiasField, RandFlip
+# Define training and validation functions
+
 
 class FocalLossBinary(nn.Module):
     def __init__(self, alpha=0.25, gamma=2):
@@ -22,7 +28,7 @@ class FocalLossBinary(nn.Module):
 
     def forward(self, preds, labels):
         eps = 1e-7
-        preds = torch.sigmoid(preds)
+        preds = torch.sigmoid(preds)  # 将输出转换为概率
         loss_1 = -self.alpha * torch.pow((1 - preds), self.gamma) * torch.log(preds + eps) * labels
         loss_0 = - (1 - self.alpha) * torch.pow(preds, self.gamma) * torch.log(1 - preds + eps) * (1 - labels)
         loss = loss_0 + loss_1
@@ -80,8 +86,8 @@ def validate(model, device, val_loader, criterion, best_accuracy, output_excel_p
               
             all_labels.extend(label_tensor.cpu().numpy())
             all_predictions.extend(predicted.cpu().numpy())
-            all_probabilities.extend(outputs.softmax(dim=1)[:, 1].cpu().numpy())
-            all_names.extend(patient_name) 
+            all_probabilities.extend(outputs.softmax(dim=1)[:, 1].cpu().numpy())  # 获取类别1的概率
+            all_names.extend(patient_name)  # 保存病人名
 
     val_loss = running_loss / len(val_loader)
     val_accuracy = 100. * correct / total
@@ -191,11 +197,11 @@ def main():
 
     # class_weights = torch.tensor([1.0, 400.0/195.0], dtype=torch.float32).to(device)
 
-    # class_weights = torch.tensor([1.0, 400.0/195.0], dtype=torch.float32) 
+    # class_weights = torch.tensor([1.0, 400.0/195.0], dtype=torch.float32)  # 根据类别分布调整权重
     # criterion = torch.nn.CrossEntropyLoss()
     criterion = torch.nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=learning_rate, weight_decay=1e-5)
-    # CosineAnnealingLR
+    # 创建 CosineAnnealingLR 调度器
     scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=100, eta_min=0.00001)
     # criterion = FocalLossBinary(alpha=0.3, gamma=1.5)
     # Define loss function and optimizer
@@ -214,6 +220,7 @@ def main():
         print(f"Train Loss: {train_loss:.4f}, Train Accuracy: {train_accuracy:.2f}%")
         
         # Validation
+        # Validation
         val_loss, val_accuracy, cm, all_labels, all_probabilities, best_accuracy  = validate(model, device, val_loader, criterion,best_accuracy, 'result_tumor_transfer/20250306_liverOnly_best_validation_results.xlsx')
         print(f"Val Loss: {val_loss:.4f}, Val Accuracy: {val_accuracy:.2f}%")
         
@@ -221,7 +228,7 @@ def main():
         if val_accuracy > best_val_accuracy:
             best_val_accuracy = val_accuracy
             best_confusion_matrix = cm
-            torch.save(model.state_dict(), 'result_tumor_transfer/liver_best_model_20250306.pth')
+            torch.save(model.state_dict(), 'logs/model/result_tumor_transfer/liver_best_model_20250306.pth')
 
         # if epoch == 99:
         #     torch.save(model.state_dict(), 'final_model.pth')
