@@ -45,7 +45,7 @@ python setup.py install
 pip install monai
 ```
 
-## 3. Demo
+## 3. Instructions for Use & Demo
 
 ### Data collection
 
@@ -107,7 +107,7 @@ data/
 
 When the pre-processing and data preparing process is done, we can train our model.
 
-We mainly use the pre-processde data from last step: 
+We mainly use the pre-processed data from last step: 
 
 - **phase1_dir = "data/PancreasTumor/arteria/"**
 
@@ -142,8 +142,17 @@ python inference.py
 
 When this process is done, the prediction results will be put in **"test_results/"** as an `.xlsx` files.
 
+### Demo: Inference patients with no label 
 
----
+```bash 
+python inference_nolabel.py
+```
+
+## License
+
+This project is licensed under the MIT License. You are free to use, modify, and distribute the code for research and educational purposes.
+
+
 ## Acknowledgement
 Many thanks for these repos for their great contribution!
 
