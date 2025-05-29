@@ -53,6 +53,16 @@ Due to privacy issues, you need to collect multi-phase CECT images (arterial pha
 
 We will put the preprocessed images demo in the data directory "data/"
 
+#### Labels File Format
+
+Patient labels are stored in an Excel file located in the `data/` directory.
+
+- The Excel file (e.g., `labels.xlsx`) contains two columns:
+  - **First column**: Patient ID (must match the folder names in `data/`)
+  - **Second column**: Label (`0` or `1`), where:
+    - `0` = Negative for occult liver metastases
+    - `1` = Positive for occult liver metastases
+
 ### Preprocessing Instructions
 
 You may refer to the preprocessing pipeline of **nnU-Net** (https://github.com/MIC-DKFZ/nnUNet).  
@@ -93,6 +103,7 @@ data/
 
 │ ├── ...
 
+
 ### Training 
 
 When the pre-processing and data preparing process is done, we can train our model.
@@ -104,6 +115,8 @@ We mainly use the pre-processde data from last step:
 - **phase2_dir = "data/venous/"**
 
 - **phase3_dir = "data/delayed/"**
+
+- **label_file = "data/label.xlsx"**
 
 ```bash 
 python train.py
