@@ -10,11 +10,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from tqdm import tqdm
 from dataset.dataset_ol_plusliver import *
-# from dataset.dataset_ol_3channel_aug_liver_only import *
-# from network.resnet3D_three_channel import *
-# from network.HEF import *
 from network.network_liver_metastases import *
-# from network.cross_attentionGPT import *
 import itertools
 from monai.transforms import Compose, RandGaussianNoise, RandBiasField, RandFlip
 # Define training and validation functions
@@ -28,7 +24,7 @@ class FocalLossBinary(nn.Module):
 
     def forward(self, preds, labels):
         eps = 1e-7
-        preds = torch.sigmoid(preds)  # 将输出转换为概率
+        preds = torch.sigmoid(preds)
         loss_1 = -self.alpha * torch.pow((1 - preds), self.gamma) * torch.log(preds + eps) * labels
         loss_0 = - (1 - self.alpha) * torch.pow(preds, self.gamma) * torch.log(1 - preds + eps) * (1 - labels)
         loss = loss_0 + loss_1
@@ -188,7 +184,7 @@ def main():
     print(f"Number of validation batches: {len(val_loader)}")
     
     # Initialize model
-    model = SegMamba(in_chans=3,
+    model = POLMMamba(in_chans=3,
                     #  out_chans=out_channels,
                      depths=[2, 2, 2, 2],
                      feat_size=[48, 96, 192, 384]).to(device="cuda")
