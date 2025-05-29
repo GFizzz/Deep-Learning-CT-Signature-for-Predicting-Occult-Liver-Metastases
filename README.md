@@ -53,15 +53,29 @@ Due to privacy issues, you need to collect multi-phase CECT images (arterial pha
 
 We will put the preprocessed images demo in the data directory "data/"
 
-### Preprocessing
-可以参考nnunet的预处理流程（https://github.com/MIC-DKFZ/nnUNet），对三期CECT图像分别经过预处理得到3d-fullres的npy文件，并将三期图像的mask乘上其肿瘤mask得到肿瘤区域的npy文件
-After pre-processing, organize the data structure in this format:
+### Preprocessing Instructions
 
-- **data/arteria/demo1.npy**
+You may refer to the preprocessing pipeline of **nnU-Net** (https://github.com/MIC-DKFZ/nnUNet).  
+Each phase of the contrast-enhanced CT (CECT) images is individually preprocessed to generate 3D full-resolution `.npy` files (`3d_fullres`).
 
-- **data/venous/demo1.npy**
-
-- **data/delayed/demo1.npy**
+After preprocessing, for each phase, the corresponding CT image is element-wise multiplied by its tumor mask to extract the tumor region. This results in one `.npy` file per phase representing the tumor area only.
+Then, organize the files as follows:
+data/
+├── arteria/
+│ ├── patient01.npy
+│ ├── patient02.npy
+│ ├── patient03.npy
+│ ├── ...
+├── venous/
+│ ├── patient01.npy
+│ ├── patient02.npy
+│ ├── patient03.npy
+│ ├── ...
+├── delayed/
+│ ├── patient01.npy
+│ ├── patient02.npy
+│ ├── patient03.npy
+│ ├── ...
 
 ### Training 
 
@@ -73,7 +87,7 @@ We mainly use the pre-processde data from last step:
 
 - **phase2_dir = "data/venous/"**
 
-- **phase3_dir = "data/venous/"**
+- **phase3_dir = "data/delayed/"**
 
 ```bash 
 python train.py
