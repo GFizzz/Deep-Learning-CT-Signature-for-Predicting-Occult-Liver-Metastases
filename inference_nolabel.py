@@ -116,7 +116,7 @@ def main_test():
     print(f"Number of testing batches: {len(test_loader)}")
     
     # Initialize and load model
-    model = SegMamba(in_chans=3, depths=[2, 2, 2, 2], feat_size=[48, 96, 192, 384]).to(device="cuda")
+    model = POLMMamba(in_chans=3, depths=[2, 2, 2, 2], feat_size=[48, 96, 192, 384]).to(device="cuda")
     model.load_state_dict(torch.load('best_model.pth'))
     # model.load_state_dict(torch.load('result_tumor_transfer/best_model_20250313.pth'))
     model.to(device)
