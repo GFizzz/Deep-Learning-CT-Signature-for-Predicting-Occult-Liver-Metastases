@@ -130,7 +130,13 @@ python train.py
 The training results and models are saved in: **"logs/model/"**
 
 
+### Pretrained Weights
 
+We provide pretrained model weights for reproducibility and evaluation.
+
+You can download the pretrained checkpoints from the following link:
+
+🔗 https://drive.google.com/drive/folders/1J9L-5HTu3gXzFG5o3Bs-VoF66-6rph0h
 
 ### Inference 
 
