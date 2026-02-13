@@ -140,7 +140,9 @@ You can download the pretrained checkpoints from the following link:
 
 ### Inference 
 
-When we have trained our models, we can inference all the data in testing set.
+When we have trained our models, we can inference all the data in testing set.  
+The testing set should follow the same directory structure as the training stage, with the three-phase images placed separately in the `noncontrast/`, `arterial/`, and `venous/` subdirectories.  
+You only need to modify the root directory path accordingly.
 
 ```bash 
 python inference.py
